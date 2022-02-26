@@ -76,7 +76,7 @@ private:
   bool     m_holdB = false;         // スイッチBの状態(チャタリング防止済み)
   uint16_t m_chatEquivalTimeA = 0;  // スイッチAで同じ状態が続いているタイマー(減算)
   uint16_t m_chatEquivalTimeB = 0;  // スイッチBで同じ状態が続いているタイマー(減算)
-  const uint16_t m_chatUpThreshold = 250; // チャタリングが終わったと判定する時間(ミリ秒)
+  const uint16_t m_chatUpThreshold = 250; // チャタリングが終わったと判定する時間(マイクロ秒)
 };
 
 // 0クリップされる減算
@@ -158,7 +158,7 @@ const uint8_t analogPin = 18;         // ボリュームピン番号
 Joystick_ Joystick(
     JOYSTICK_DEFAULT_REPORT_ID, // hidReportId
     JOYSTICK_TYPE_JOYSTICK,     // joystickType
-    10,     // ボタン x4
+    4,     // ボタン x4
     0,     // hatSwitchCount
     true,  // X軸 : ボリューム値
     true,  // Y軸 : ロータリーエンコーダーのダイヤル値
